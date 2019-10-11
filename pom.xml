@@ -3,4 +3,63 @@
   <groupId>org.community</groupId>
   <artifactId>community</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath /> 
+	</parent>
+<properties>
+        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.1.1</thymeleaf-layout-dialect.version>
+</properties>
+  <dependencies>
+ <!--引入thymeleaf-->
+ <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-thymeleaf</artifactId>
+ </dependency>
+ <!--解除HTML严格语法-->
+ <dependency>
+     <groupId>net.sourceforge.nekohtml</groupId>
+     <artifactId>nekohtml</artifactId>
+ </dependency>
+
+ <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-web</artifactId>
+ </dependency>
+
+ <!--bootstrap-->
+ <!-- 在springboot中集成bootstrap https://blog.csdn.net/sinat_24048051/article/details/77531834-->
+ <dependency>
+     <groupId>org.webjars</groupId>
+     <artifactId>bootstrap</artifactId>
+     <version>3.3.5</version>
+ </dependency>
+ <!-- 引入jquery -->
+ <dependency>
+     <groupId>org.webjars</groupId>
+     <artifactId>jquery</artifactId>
+     <version>3.1.1</version>
+ </dependency>
+ <!-- 引入okhttp -->
+ <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.14.1</version>
+ </dependency>
+ <dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.57</version>
+</dependency>
+ 
+ 
+ <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-test</artifactId>
+     <scope>test</scope>
+ </dependency>
+</dependencies>
 </project>
