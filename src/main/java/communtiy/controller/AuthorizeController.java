@@ -1,5 +1,8 @@
 package communtiy.controller;
 
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -27,7 +30,8 @@ public class AuthorizeController {
 	
 	@RequestMapping("/callback")
 	public String callback(@RequestParam(name="code")String code,
-							@RequestParam(name="state")String state) {
+							@RequestParam(name="state")String state,
+							HttpServletRequest request) {
 		accessTokenDTO accessTokenDTO = new accessTokenDTO();
 		accessTokenDTO.setClient_id(clientId);
 		accessTokenDTO.setClient_secret(clientSecret);
@@ -36,8 +40,18 @@ public class AuthorizeController {
 		accessTokenDTO.setState(state);
 		String accessToken = githubProvider.getAccessToken(accessTokenDTO);
 		githubUser user = githubProvider.getUser(accessToken);
-		System.out.println(user.getName());
-		return "index";
+		
+		if(user!=null) {
+			//登录成功，写cookie 和cession
+			request.getSession().setAttribute("user",user);
+			System.out.println("成功");
+			return "redirect:/";
+		}else {
+			//登录失败，重新登录
+			System.out.println("失败");
+			return "redirect:/";
+		}
+		
 		
 	}
 }
