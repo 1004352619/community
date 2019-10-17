@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
+import net.bytebuddy.asm.Advice.This;
 
 @Data
 public class PaginationDTO {
@@ -24,13 +25,12 @@ public class PaginationDTO {
 		}else {
 			totalPage = totalCount / size +1;
 		}
-		
-		if(page <1) {
-			page=1;
-		}
 		if(page > totalPage) {
 			page = totalPage;
+		}else if(page <1) {
+			page=1;
 		}
+		
 		
 		this.page=page;
 		pages.add(page);
@@ -45,7 +45,7 @@ public class PaginationDTO {
 		}
 		
 		//是否显示上一页
-		if(page == 1) {
+		if(page == 1 || totalCount ==0) {
 			showPrevious=false;
 		}else {
 			showPrevious=true;
@@ -58,7 +58,7 @@ public class PaginationDTO {
 		}
 		
 		//是否显示第一页
-		if(pages.contains(1)) {
+		if(pages.contains(1) || totalCount ==0) {
 			showFirstPage=false;
 		}else {
 			showFirstPage=true;
