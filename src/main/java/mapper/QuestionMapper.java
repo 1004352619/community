@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import dto.QuestionDTO;
 import model.Question;
 
 @Mapper
@@ -26,6 +27,11 @@ public interface QuestionMapper {
 
 	@Select("select count(1) from question where creator = #{userId}")
 	Integer countByUserId(@Param("userId")Integer userId);
+
+	@Select("select * from question where id = #{id}")
+	Question getById(@Param("id")Integer id);
+
+	
 	
 	
 	
