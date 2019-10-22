@@ -30,8 +30,10 @@ public class PaginationDTO {
 		}else if(page <1) {
 			page=1;
 		}
-		
-		
+/*		Integer offset = size*(page-1);
+		if(page==0) {
+			offset=0;
+		}*/
 		this.page=page;
 		pages.add(page);
 		for(int i=1;i<=3;i++) {

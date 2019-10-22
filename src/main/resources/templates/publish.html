@@ -4,11 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <title>发布 - 四笔社区</title>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/community.css" rel="stylesheet">
-<script src="bootstrap/js/jquery-3.4.1.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="/css/community.css" rel="stylesheet">
+<script src="/bootstrap/js/jquery-3.4.1.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -20,6 +20,7 @@
     		<hr>
     		
     		<form action="/publish" method="post">
+    		<input type="hidden" name="id" th:value="${id}"> 
     		<div class="form-group">
 			    <label for="title">问题标题:</label>
 			    <input type="text" class="form-control" id="title" name="title" th:value="${title}" placeholder="问题标题...">

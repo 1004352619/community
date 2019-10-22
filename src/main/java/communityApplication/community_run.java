@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import com.baidu.aip.ocr.AipOcr;
 
 @SpringBootApplication(scanBasePackages="communtiy.controller,provider,service,dto,interceptor")
-@MapperScan("mapper")
+@MapperScan(basePackages="mapper")
 public class community_run {
 
 	public static void main(String[] args) {
