@@ -60,15 +60,8 @@ public class AuthorizeController {
 			user.setName(githubuser.getName());
 			user.setAccountId(String.valueOf(githubuser.getId()));
 			user.setAvatarUrl(githubuser.getAvatar_url());
-			Long start;
-			long end;
-			start=System.currentTimeMillis();
 			userService.createOrUpdata(user);
 			response.addCookie(new Cookie("token", token));
-			end=System.currentTimeMillis();
-			end=end-start;
-			System.err.println(end);
-			System.out.println(end+"秒");
 			
 			//登录成功，写cookie 和cession
 			/*request.getSession().setAttribute("user",githubuser);
