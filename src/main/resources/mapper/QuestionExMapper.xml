@@ -13,10 +13,17 @@
     <result column="tag" jdbcType="VARCHAR" property="tag" />
   </resultMap>
  
- <update id="View" parameterType="model.Question">
+ <update id="incView" parameterType="model.Question">
     update question
     set
     view_count = view_count + #{viewCount}
+	where id = #{id}
+  </update>
+  
+   <update id="incCommentCount" parameterType="model.Question">
+    update question
+    set
+    comment_count = comment_count + #{commentCount}
 	where id = #{id}
   </update>
 </mapper>

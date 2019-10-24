@@ -62,10 +62,10 @@ public class AuthorizeController {
 			user.setAvatarUrl(githubuser.getAvatar_url());
 			userService.createOrUpdata(user);
 			response.addCookie(new Cookie("token", token));
-			
+/*			 request.getSession().setAttribute("user",user);
 			//登录成功，写cookie 和cession
-			/*request.getSession().setAttribute("user",githubuser);
 			System.out.println("成功");*/
+			
 			return "redirect:/";
 		}else {
 			//登录失败，重新登录

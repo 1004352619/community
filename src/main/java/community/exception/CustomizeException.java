@@ -1,4 +1,4 @@
-package exception;
+package community.exception;
 
 public class CustomizeException extends RuntimeException{
 	private String message;

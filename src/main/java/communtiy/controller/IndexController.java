@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import community.exception.CustomizeErrorCode;
 import dto.PaginationDTO;
 import dto.QuestionDTO;
+import dto.ResultDTO;
 import mapper.QuestionMapper;
 import mapper.UserMapper;
 import model.Question;

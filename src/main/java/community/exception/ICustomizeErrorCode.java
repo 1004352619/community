@@ -1,4 +1,4 @@
-package exception;
+package community.exception;
 
 
 public interface ICustomizeErrorCode {

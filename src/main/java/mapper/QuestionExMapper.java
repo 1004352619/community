@@ -7,5 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
 public interface QuestionExMapper {
-    int View(Question record);
+    int incView(Question record);
+    int incCommentCount(Question record);
 }

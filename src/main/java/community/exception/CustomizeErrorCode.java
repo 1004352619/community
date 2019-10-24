@@ -1,4 +1,4 @@
-package exception;
+package community.exception;
 
 public enum CustomizeErrorCode implements ICustomizeErrorCode{
 	QUESTION_NOT_FOUND(2001,"你找的问题不在了，换个试试!"),

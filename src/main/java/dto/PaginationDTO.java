@@ -53,7 +53,7 @@ public class PaginationDTO {
 			showPrevious=true;
 		}
 		//是否显示下一页
-		if(page == totalPage) {
+		if(page == totalPage || totalCount ==0) {
 			showNext=false;
 		}else {
 			showNext=true;
@@ -67,7 +67,7 @@ public class PaginationDTO {
 		}
 		
 		//是否显示最后一页
-		if(pages.contains(totalPage)) {
+		if(pages.contains(totalPage)|| totalCount ==0) {
 			showEndPage=false;
 		}else {
 			showEndPage=true;
